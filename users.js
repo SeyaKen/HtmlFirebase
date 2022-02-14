@@ -28,7 +28,24 @@ function loadbody() {
 } 
 
 // ユーザーがログインしているか確認
+auth.onAuthStateChanged(user=>{
+  if(user) {
+    console.log('ログイン済み');
+  } else {
+    alert('ログインしていません。');
+    location = 'login.html';
+  }
+});
 
+// ユーザの名前を回収する
+auth.onAuthStateChanged(user=>{
+  if(user) {
+    const username = document.getElementById('username');
+    fs.collection('users').doc(user.uid).get().then(snapshot=>{
+      username.innerText = snapshot.data().Name + 'さん';
+    });
+  }
+});
 
 
 

@@ -9,7 +9,7 @@ loginForm.addEventListener('submit', e => {
   // console.log(loginEmail, loginPassword);
   auth.signInWithEmailAndPassword(loginEmail, loginPassword).then(() => {
     console.log('ログインに成功しました。');
-    location = 'user.html';
+    location = 'users.html';
   }).catch(err => {
     console.log(err.message);
     const loginError = document.getElementById('loginError');
