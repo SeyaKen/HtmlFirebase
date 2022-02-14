@@ -4,7 +4,6 @@ const spanDate = document.getElementById('date');
 const spanMonth = document.getElementById('month'); 
 const spanYear = document.getElementById('year');
 const spanWeekday = document.getElementById('weekday');
-
 function loadbody() {
   console.log('body is laoded');
   const data = new Date();
@@ -31,6 +30,8 @@ const signupForm = document.getElementById('signup-form');
 // 上で取得した、signup-form要素のsubmitが押された時
 // 2番目の引数に指定した関数が発火する
 signupForm.addEventListener('submit', e=>{
+  // event.preventDefaultメソッドを呼び出すことで、
+  // submitタグのデフォルトの動作をキャンセルしています。
   e.preventDefault();
   // signupForm['獲得したい値のidを指定する']
   const name = signupForm['name'].value;
@@ -45,7 +46,8 @@ signupForm.addEventListener('submit', e=>{
       Password: password,
     }).then(() => {
       console.log('ログインに成功しました。');
-      location = 'index.html';
+      // ここに指定したページに移動させる。
+      location = 'login.html';
     }).catch(err => {
       console.log(err.message);
       const signupError = document.getElementById('signupError');
