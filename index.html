@@ -18,7 +18,7 @@
         href="https://fonts.googleapis.com/css?family=Tangerine|Lato|Gamja+Flower|Open+Sans|Roboto+Slab|Indie+Flower|Lobster|Open+Sans|Kosugi+Maru">
 </head>
 
-<body onload="loadbody();">
+<body onload="loadbody()">
     <!-- date and time section -->
     <div class="my-container">
         <h3>Welcome, <span>User</span></h3>
@@ -57,6 +57,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                  <!-- formとはユーザーが入力した情報をサーバーに送信するためのページ -->
                     <form autocomplete="off" class="form-group" id="signup-form">
                         <label for="">Name</label>
                         <input type="text" class="form-control" id="name" required><br>
@@ -94,23 +95,22 @@
     <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
 
     <script>
-        var firebaseConfig = {
-            apiKey: "AIzaSyARA-dGIj1-05w9oDunSaz5AQC5IqKZBfo",
-            authDomain: "todoappwithvanillajs.firebaseapp.com",
-            databaseURL: "https://todoappwithvanillajs.firebaseio.com",
-            projectId: "todoappwithvanillajs",
-            storageBucket: "todoappwithvanillajs.appspot.com",
-            messagingSenderId: "464001838711",
-            appId: "1:464001838711:web:41442567b84482b529e072",
-            measurementId: "G-1203KJKM46"
-        };
-
-        firebase.initializeApp(firebaseConfig);
-
-        const auth = firebase.auth();
-        const db = firebase.firestore();
+      const firebaseConfig = {
+        apiKey: "AIzaSyBZjTiSf1twesCSt4J-NmadJLx9R80_XKk",
+        authDomain: "html-js-9527d.firebaseapp.com",
+        projectId: "html-js-9527d",
+        storageBucket: "html-js-9527d.appspot.com",
+        messagingSenderId: "19250028806",
+        appId: "1:19250028806:web:f661223caa1adcc1e5be87",
+        measurementId: "G-FVXKEFTEQ4"
+      };
+    
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      
+      const auth = firebase.auth();
+      const db = firebase.firestore();
     </script>
-
     <script src="app.js"></script>
 
 </body>
