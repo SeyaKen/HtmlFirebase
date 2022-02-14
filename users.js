@@ -26,3 +26,13 @@ function loadbody() {
   spanYear.innerText=year;
   spanWeekday.innerText=weekday;
 } 
+
+// ユーザーがログインしているか確認
+
+
+
+
+
+
+
+
