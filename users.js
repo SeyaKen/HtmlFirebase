@@ -47,6 +47,30 @@ auth.onAuthStateChanged(user=>{
   }
 });
 
+// adding todos
+const form = document.getElementById('form');
+const date = new Date();
+const time = date.getTime();
+let counter = time;
+form.addEventListener('submit', e=>{
+  e.preventDefault();
+  const todos = form['todos'].value;
+  let id = counter += 1;
+  form.reset();
+  auth.onAuthStateChanged(user=>{
+    if(user) {
+      fs.collection('users').doc('_' + id).set({
+        id: '_' + id,
+        todos,
+      }).then(() => {
+        console.log('todo added');
+      }).catch(err=>{
+        console.log(err.message);
+      });
+    }
+  });
+});
+
 
 
 
